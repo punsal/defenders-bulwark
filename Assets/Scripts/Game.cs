@@ -10,6 +10,7 @@ public static class Game
         {
             Start,
             Update,
+            Card,
             Over,
             Restart,
         }

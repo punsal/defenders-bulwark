@@ -9,8 +9,8 @@ namespace Destroyables
         
         public void Destroy()
         {
-            Destroy(gameObject);
             onDestroyed?.Invoke();
+            Destroy(gameObject);
         }
     }
 }
