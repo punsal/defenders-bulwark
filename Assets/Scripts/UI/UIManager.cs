@@ -1,33 +1,36 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UI
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] private GameObject startScreen;
-        [SerializeField] private GameObject gameScreen;
-        [SerializeField] private GameObject gameOverScreen;
-
-        private void Start()
-        {
-            startScreen.SetActive(false);
-            gameScreen.SetActive(false);
-            gameOverScreen.SetActive(false);
-        }
-
-        private void OnGameStarted()
-        {
-            startScreen.SetActive(false);
-            gameScreen.SetActive(false);
-            gameOverScreen.SetActive(false);
-        }
+        [Header("UIViews")]
+        [SerializeField] private List<UIView> uiViews;
         
-
-        private void OnGameOver()
+        private void OnEnable()
         {
-            startScreen.SetActive(false);
-            gameScreen.SetActive(false);
-            gameOverScreen.SetActive(true);
+            Game.Machine.OnStateChangeEvent += OnStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            Game.Machine.OnStateChangeEvent -= OnStateChanged;
+        }
+
+        private void OnStateChanged(Game.Machine.State state)
+        {
+            foreach (var uiView in uiViews)
+            {
+                if (uiView.State != state)
+                {
+                    uiView.Disappear();
+                }
+                else
+                {
+                    uiView.Appear();
+                }
+            }
         }
     }
 }

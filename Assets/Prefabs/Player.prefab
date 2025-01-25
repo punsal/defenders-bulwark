@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041819538084191133}
+  - component: {fileID: 1632874561397345498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   - {fileID: 9036109985763603654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632874561397345498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156094782798164142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efffa2915d6e484b9ad2d79565e85736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185024688103809932
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +59,7 @@ GameObject:
   - component: {fileID: 2619604671138840853}
   - component: {fileID: 1895851506338688279}
   - component: {fileID: 9024885414401738218}
-  - component: {fileID: 4006288177808769427}
+  - component: {fileID: 713866090617686255}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -187,7 +200,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4006288177808769427
+--- !u!114 &713866090617686255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,9 +209,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185024688103809932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563470c8e28d43a9990fadbb36a45237, type: 3}
+  m_Script: {fileID: 11500000, guid: 399bc063f36e46078f480b0c736f0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1185024688103809932}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2027310099541250276}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1632874561397345498}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Lose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2027310099541250276
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +396,7 @@ GameObject:
   - component: {fileID: 4959743593957858433}
   - component: {fileID: 6846186595018972066}
   - component: {fileID: 8392697970910778218}
-  - component: {fileID: 4962369888069327533}
+  - component: {fileID: 6440591882311196113}
   m_Layer: 0
   m_Name: Orbit (2)
   m_TagString: Untagged
@@ -485,7 +537,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4962369888069327533
+--- !u!114 &6440591882311196113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,9 +546,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4775728429563063856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563470c8e28d43a9990fadbb36a45237, type: 3}
+  m_Script: {fileID: 11500000, guid: 399bc063f36e46078f480b0c736f0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4775728429563063856}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4898606844810636356
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +576,7 @@ GameObject:
   - component: {fileID: 692744890656578741}
   - component: {fileID: 8823711082442097825}
   - component: {fileID: 2454380528597283483}
-  - component: {fileID: 4302500266865166923}
+  - component: {fileID: 5500653201547456178}
   m_Layer: 0
   m_Name: Orbit
   m_TagString: Untagged
@@ -650,7 +717,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4302500266865166923
+--- !u!114 &5500653201547456178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -659,9 +726,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4898606844810636356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563470c8e28d43a9990fadbb36a45237, type: 3}
+  m_Script: {fileID: 11500000, guid: 399bc063f36e46078f480b0c736f0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4898606844810636356}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5917797727271990367
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +837,7 @@ GameObject:
   - component: {fileID: 3739076781322504297}
   - component: {fileID: 6654861925419045728}
   - component: {fileID: 4671289493941691827}
-  - component: {fileID: 3609947772961057327}
+  - component: {fileID: 6485435870659577841}
   m_Layer: 0
   m_Name: Orbit (1)
   m_TagString: Untagged
@@ -896,7 +978,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3609947772961057327
+--- !u!114 &6485435870659577841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -905,6 +987,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7418933885139243401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563470c8e28d43a9990fadbb36a45237, type: 3}
+  m_Script: {fileID: 11500000, guid: 399bc063f36e46078f480b0c736f0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7418933885139243401}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

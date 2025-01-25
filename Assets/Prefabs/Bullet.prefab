@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d0dd5a520974a13a9f8d8c732d273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 5
-  bulletLifeTime: 2
+  bulletSpeed: 12
+  bulletLifeTime: 1
 --- !u!114 &6610233209580091084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563470c8e28d43a9990fadbb36a45237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &6020047389257280597
 Rigidbody2D:
   serializedVersion: 5
