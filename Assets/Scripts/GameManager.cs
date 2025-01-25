@@ -1,14 +1,11 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private void Start()
     {
-        if (Game.Machine.Current == Game.Machine.State.Start)
-        {
-            Game.Machine.ChangeState(Game.Machine.State.Update);
-        }
+        Game.Machine.ChangeState(Game.Machine.State.Start);
     }
 
     private void Update()
@@ -17,5 +14,16 @@ public class GameManager : MonoBehaviour
         {
             Game.RunUpdate();
         }
+    }
+
+    public void StartGame()
+    {
+        Game.Machine.ChangeState(Game.Machine.State.Update);
+    }
+
+    public void RestartGame()
+    {
+        Game.Machine.ChangeState(Game.Machine.State.Restart);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
