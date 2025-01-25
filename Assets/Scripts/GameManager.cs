@@ -10,6 +10,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Game.Machine.Current == Game.Machine.State.Start)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                StartGame();
+                return;
+            }
+        }
+        
         if (Game.Machine.Current == Game.Machine.State.Update)
         {
             Game.RunUpdate();
