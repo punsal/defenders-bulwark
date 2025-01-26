@@ -29,7 +29,7 @@ namespace Coin
             for (var i = 0; i < size; i++)
             {
                 var slot = coinSlots[i];
-                slot.SetActive(i <= coinData.CoinAmount);
+                slot.SetActive(i < coinData.CoinAmount);
             }
         }
     }

@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 571792263}
   - component: {fileID: 571792264}
   - component: {fileID: 571792265}
+  - component: {fileID: 571792266}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -306,6 +307,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa69830fd72c494b8660130a951df5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 571792266}
+  enemyManager: {fileID: 571792263}
+  waveCounter: {fileID: 11400000, guid: fbc9691956580495e8b37f9768bac86a, type: 2}
+  gameData:
+  - {fileID: 11400000, guid: 7b8a826ff24264566b65dd5f34c525ad, type: 2}
+  - {fileID: 11400000, guid: 26a65c4eac52549e6868d6e53a9747fe, type: 2}
+  - {fileID: 11400000, guid: 5538062bacae444399ff6ed25d51f201, type: 2}
+  - {fileID: 11400000, guid: 57bc66a799fb347ddb0dd9f1f80dc060, type: 2}
+  - {fileID: 11400000, guid: 624baf9da0a7c4e19a358a9fa5c96cd2, type: 2}
+  - {fileID: 11400000, guid: 7587d7845729e4e36867d3ed9aebb459, type: 2}
+  - {fileID: 11400000, guid: d46192063c4e742fca3d6e19a5f7c5f4, type: 2}
+  - {fileID: 11400000, guid: 8d514cc1a46a942f58762ea4acb30af4, type: 2}
+  - {fileID: 11400000, guid: fbc9691956580495e8b37f9768bac86a, type: 2}
 --- !u!4 &571792262
 Transform:
   m_ObjectHideFlags: 0
@@ -333,16 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3c10e17a4643f4ac3bc2405ffd1281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 6426636295081030054, guid: c1ca26be627a44bdf8cfe78495bc63ec, type: 3}
-  - {fileID: 782280096065086150, guid: bf0b2fdf0a82248f29d595f3bcf3b327, type: 3}
-  - {fileID: 332271635707009124, guid: 4e5dca312f9e841c98f562699fff78f4, type: 3}
-  - {fileID: 5420400724646044198, guid: 09c5f7e23a8f34462b349e46e5377639, type: 3}
-  - {fileID: 5106786063676492220, guid: 72ba672f898e942a79aef6de5ac2f1e0, type: 3}
-  isRandom: 1
-  prefab: {fileID: 8644686000493784271, guid: 20872a4ffef694cb497d8b6fbb881509, type: 3}
   spawnRadius: 10
-  timeBetweenSpawns: 1
 --- !u!114 &571792264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +379,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinData: {fileID: 11400000, guid: 53d11a6ee79724eea88dcd27f23126bd, type: 2}
   coinPrefab: {fileID: 7582852484321887695, guid: fad387b47c52541f3856ae73a118a99b, type: 3}
-  percentage: 0.7
+--- !u!114 &571792266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571792260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773efe03a499c4d77b57024c8edc5c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 11400000, guid: 579a7c20ef2d54ce981ec89861d14982, type: 2}
+  - {fileID: 11400000, guid: 85d8d6606843047cfa3b1d1caec0cf53, type: 2}
+  - {fileID: 11400000, guid: 13ea11c4654f8463d872d639be612c4e, type: 2}
+  - {fileID: 11400000, guid: 6c36fc9a9e9624024ae5bef182772c06, type: 2}
+  - {fileID: 11400000, guid: a54470b9ec7c34dca8b245801cc9979e, type: 2}
+  - {fileID: 11400000, guid: 5adb8c216d04c488393c0afc4363fa6a, type: 2}
+  - {fileID: 11400000, guid: 4168ea97366ef499db38fa785bfb2910, type: 2}
+  - {fileID: 11400000, guid: 873a80467a7a14f79b8943faff968a8e, type: 2}
+  - {fileID: 11400000, guid: 8eab37800f87d44c2a43d21e7e8ffa68, type: 2}
+  - {fileID: 11400000, guid: abc0d4b02b1ba4d93a23f5e7f1bbbd27, type: 2}
 --- !u!224 &758963894 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1277518412641248892, guid: c880032f164054713826ee082fd37266, type: 3}
@@ -793,8 +820,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1548458908}
+  - {fileID: 276493651}
   - {fileID: 1374975731}
   - {fileID: 571792262}
   - {fileID: 357005408}
   - {fileID: 1896848293}
-  - {fileID: 276493651}

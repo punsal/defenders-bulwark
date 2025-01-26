@@ -1,8 +1,17 @@
+using System.Collections.Generic;
+using Abstract;
+using Enemies;
+using Levels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private LevelManager levelManager;
+    [SerializeField] private EnemyManager enemyManager;
+    [SerializeField] private WaveCounter waveCounter;
+    [SerializeField] private List<GameData> gameData;
+
     private void OnEnable()
     {
         Game.Events.WaveCompleted += OnWaveCompleted;
@@ -16,6 +25,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Game.Machine.ChangeState(Game.Machine.State.Start);
+        waveCounter.Initialize(0);
     }
 
     private void Update()
@@ -36,15 +46,42 @@ public class GameManager : MonoBehaviour
 
         if (Game.Machine.Current == Game.Machine.State.Card)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Alpha1))
             {
+                Game.Events.OnCardSelected(0);
+            }
+            
+            if (Input.GetKeyUp(KeyCode.Alpha2))
+            {
+                Game.Events.OnCardSelected(1);
+            }
+            
+            if (Input.GetKeyUp(KeyCode.Alpha3))
+            {
+                Game.Events.OnCardSelected(2);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Game.Events.OnApplyCardEffect();
                 StartGame();
             }
         }
     }
 
+    private void OnApplicationQuit()
+    {
+        foreach (var data in gameData)
+        {
+            data.RevertChanges();
+        }
+    }
+
     public void StartGame()
     {
+        var level = levelManager.GetLevel();
+        enemyManager.Initialize(level.EnemySpawnData);
+        waveCounter.StartWave();
         Game.Machine.ChangeState(Game.Machine.State.Update);
     }
 

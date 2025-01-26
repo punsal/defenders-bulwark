@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Enemies;
+using Shooting;
 using UnityEngine;
 
 public static class Game
@@ -30,6 +31,12 @@ public static class Game
     {
         public static event Action<Enemy> Destroyed;
         public static event Action WaveCompleted;
+        public static event Action<int> CardSelected;
+        public static event Action AppleCardEffect;
+        
+        public static event Action AddBubble;
+
+        public static event Action<AShooter.Type> AddShooter;
 
         public static void OnDestroyed(Enemy enemy)
         {
@@ -39,6 +46,26 @@ public static class Game
         public static void OnWaveCompleted()
         {
             WaveCompleted?.Invoke();
+        }
+
+        public static void OnCardSelected(int card)
+        {
+            CardSelected?.Invoke(card);
+        }
+
+        public static void OnApplyCardEffect()
+        {
+            AppleCardEffect?.Invoke();
+        }
+
+        public static void OnAddBubble()
+        {
+            AddBubble?.Invoke();
+        }
+
+        public static void OnAddShooter(AShooter.Type type)
+        {
+            AddShooter?.Invoke(type);
         }
     }
 

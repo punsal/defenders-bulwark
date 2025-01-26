@@ -4,12 +4,12 @@ namespace Abstract
 {
     public abstract class AGameBehaviour : MonoBehaviour
     {
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             Game.AddUpdate(OnUpdate);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             Game.RemoveUpdate(OnUpdate);
         }

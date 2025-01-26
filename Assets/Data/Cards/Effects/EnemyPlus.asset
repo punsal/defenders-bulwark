@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72791a6f6ce34d3799a45f076e4cbc99, type: 3}
+  m_Name: EnemyPlus
+  m_EditorClassIdentifier: 
+  coinData: {fileID: 11400000, guid: 53d11a6ee79724eea88dcd27f23126bd, type: 2}
+  amount: 0.1

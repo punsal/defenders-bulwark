@@ -5,6 +5,8 @@ namespace Enemies
 {
     public class Enemy : AGameBehaviour
     {
+        [SerializeField] private EnemyData enemyData;
+        [SerializeField] private float initialSpeed;
         [SerializeField] private GameObject deathEffect;
 
         private float _speed;
@@ -12,6 +14,7 @@ namespace Enemies
         public void Initialize(float speed)
         {
             _speed = speed;
+            enemyData.Initialize(initialSpeed);
         }
 
         private void Move()

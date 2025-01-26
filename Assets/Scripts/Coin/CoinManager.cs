@@ -8,7 +8,6 @@ namespace Coin
     {
         [SerializeField] private CoinData coinData;
         [SerializeField] private GameObject coinPrefab;
-        [SerializeField, Range(0f, 1f)] private float percentage;
         
         private void OnEnable()
         {
@@ -22,13 +21,13 @@ namespace Coin
 
         private void Start()
         {
-            coinData.Initialize(0);
+            coinData.Initialize(0, 0.2f);
         }
 
         private void OnDestroyed(Enemy enemy)
         {
             var rng = Random.Range(0f, 1f);
-            if (!(rng <= percentage))
+            if (!(rng <= coinData.Percentage))
             {
                 return;
             }

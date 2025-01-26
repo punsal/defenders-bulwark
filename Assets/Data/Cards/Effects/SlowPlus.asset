@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de22610265784183b38e567bc4f20c56, type: 3}
+  m_Name: SlowPlus
+  m_EditorClassIdentifier: 
+  amount: 0.1
+  enemyData:
+  - {fileID: 11400000, guid: 57bc66a799fb347ddb0dd9f1f80dc060, type: 2}
+  - {fileID: 11400000, guid: 624baf9da0a7c4e19a358a9fa5c96cd2, type: 2}
+  - {fileID: 11400000, guid: 7587d7845729e4e36867d3ed9aebb459, type: 2}
+  - {fileID: 11400000, guid: d46192063c4e742fca3d6e19a5f7c5f4, type: 2}
+  - {fileID: 11400000, guid: 8d514cc1a46a942f58762ea4acb30af4, type: 2}
