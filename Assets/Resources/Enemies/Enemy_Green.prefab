@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3594535406746782913, guid: 20872a4ffef694cb497d8b6fbb881509, type: 3}
       propertyPath: m_Name
-      value: Enemy_Green Variant
+      value: Enemy_Green
       objectReference: {fileID: 0}
     - target: {fileID: 7211664447752742297, guid: 20872a4ffef694cb497d8b6fbb881509, type: 3}
       propertyPath: m_LocalScale.x
@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ff1785cc1f753442a94a1c0fb621399f, type: 3}
+    - target: {fileID: 8644686000493784271, guid: 20872a4ffef694cb497d8b6fbb881509, type: 3}
+      propertyPath: speed
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8707761873238231425, guid: 20872a4ffef694cb497d8b6fbb881509, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

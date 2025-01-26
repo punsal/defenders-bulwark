@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
 public static class Game
@@ -27,7 +28,18 @@ public static class Game
     
     public static class Events
     {
-        
+        public static event Action<Enemy> Destroyed;
+        public static event Action WaveCompleted;
+
+        public static void OnDestroyed(Enemy enemy)
+        {
+            Destroyed?.Invoke(enemy);
+        }
+
+        public static void OnWaveCompleted()
+        {
+            WaveCompleted?.Invoke();
+        }
     }
 
     private static readonly Queue<Action> AddUpdatesQueue;

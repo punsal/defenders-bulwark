@@ -3,6 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        Game.Events.WaveCompleted += OnWaveCompleted;
+    }
+
+    private void OnDisable()
+    {
+        Game.Events.WaveCompleted -= OnWaveCompleted;
+    }
+
     private void Start()
     {
         Game.Machine.ChangeState(Game.Machine.State.Start);
@@ -23,6 +33,14 @@ public class GameManager : MonoBehaviour
         {
             Game.RunUpdate();
         }
+
+        if (Game.Machine.Current == Game.Machine.State.Card)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                StartGame();
+            }
+        }
     }
 
     public void StartGame()
@@ -34,5 +52,10 @@ public class GameManager : MonoBehaviour
     {
         Game.Machine.ChangeState(Game.Machine.State.Restart);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnWaveCompleted()
+    {
+        Game.Machine.ChangeState(Game.Machine.State.Card);
     }
 }

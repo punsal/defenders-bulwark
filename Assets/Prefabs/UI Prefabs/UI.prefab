@@ -55,6 +55,7 @@ MonoBehaviour:
   uiViews:
   - {fileID: 103261553351078945}
   - {fileID: 5808556471430373703}
+  - {fileID: 4112100896248671101}
   - {fileID: 7311925069459299000}
 --- !u!1001 &1739307446568511890
 PrefabInstance:
@@ -266,6 +267,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f017788530594bf09e7f95d4bb0a56f, type: 3}
+--- !u!114 &4112100896248671101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 670755432662696460, guid: 9f017788530594bf09e7f95d4bb0a56f, type: 3}
+  m_PrefabInstance: {fileID: 3485255569012533617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c023274e659f4de2bf2c7b5a71e84f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6091739659186694367 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7265477766161285550, guid: 9f017788530594bf09e7f95d4bb0a56f, type: 3}
